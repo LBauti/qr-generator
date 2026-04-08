@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link rel="icon" href="favicon.svg">
+    <meta property="og:title" content="QR Genesis - Generador de QR profesional">
+    <meta property="og:description" content="Crea códigos QR personalizados gratis">
+    <meta property="og:type" content="website">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Generador de Códigos QR profesional con diseño moderno">
+    <meta property="og:title" content="QR Genesis - Generador de QR profesional">
+    <meta property="og:description"
+        content="Crea códigos QR personalizados gratis. 15 tipos disponibles. Descarga en PNG, SVG o PDF.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://TU-DOMINIO.com">
+    <meta property="og:image" content="https://TU-DOMINIO.com/preview.png">
+    <meta name="keywords"
+        content="qr generator, crear qr, qr personalizado, generador qr gratis, qr code maker, qr code generator, qr con logo, qr para redes sociales, qr para eventos, qr personalizato, qr profesional, qr para negocios, qr para marketing, qr para contacto, qr para wifi, qr para ubicación, qr personalized, qr code creator, qr code design, qr code download, qr code formats, qr code customization">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="QR Genesis - Generador de QR profesional">
+    <meta name="twitter:description" content="Genera códigos QR personalizados gratis en segundos.">
+    <meta name="twitter:image" content="https://TU-DOMINIO.com/preview.png">
+
+    <link rel="canonical" href="https://TU-DOMINIO.com">
+    <title data-i18n="page_title">QR Genesis • Generá tu QR personalizado en segundos</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <script src="https://unpkg.com/lucide@0.447.0/dist/umd/lucide.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="animated-bg">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+    </div>
+
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-icon"><i data-lucide="qr-code"></i></span>
+                    <span class="logo-text">QR Genesis</span>
+                </div>
+                <nav class="nav">
+                    <a href="#features" class="nav-link" data-i18n="nav_features">Características</a>
+                    <a href="#how" class="nav-link" data-i18n="nav_how">Cómo funciona</a>
+                    <a href="#faq" class="nav-link" data-i18n="nav_faq">FAQ</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    <span data-i18n="hero_badge">Generador de QR 100% GRATIS</span>
+                </div>
+                <h1 class="hero-title">
+                    Crea QR Codes
+                    <span class="gradient-text" data-i18n="hero_title_gradient">Extraordinarios</span>
+                </h1>
+                <p data-i18n="hero_subtitle" class="hero-subtitle">
+                    Personalización avanzada • 15 tipos de códigos • Descarga en múltiples formatos • Sin limites ni marcas de agua
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="qr-tool">
+        <div class="container">
+            <div class="tool-wrapper">
+                <div class="config-panel glass-card">
+                    <div class="panel-header">
+                        <h3 data-i18n="config_settings">Configuración</h3>
+                        <div class="header-indicator">
+                            <span class="indicator-dot"></span>
+                            <span class="indicator-text" data-i18n="config_ready">Listo</span>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <label class="section-label" data-i18n="config_content">Contenido</label>
+                        <div class="type-grid">
+                            <button data-type="url" class="type-card active" title="URL / Enlace">
+                                <span class="type-icon"><i data-lucide="link-2"></i></span>
+                                <span class="type-name" data-i18n="config_type_url">URL</span>
+                            </button>
+                            <button data-type="email" class="type-card" title="Correo electrónico">
+                                <span class="type-icon"><i data-lucide="mail"></i></span>
+                                <span class="type-name" data-i18n="config_type_email">Email</span>
+                            </button>
+                            <button data-type="text" class="type-card" title="Texto plano">
+                                <span class="type-icon"><i data-lucide="file-text"></i></span>
+                                <span class="type-name" data-i18n="config_type_text">Texto</span>
+                            </button>
+                            <button data-type="call" class="type-card" title="Llamada telefónica">
+                                <span class="type-icon"><i data-lucide="phone"></i></span>
+                                <span class="type-name" data-i18n="config_type_call">Llamada</span>
+                            </button>
+                            <button data-type="sms" class="type-card" title="Mensaje SMS">
+                                <span class="type-icon"><i data-lucide="message-square"></i></span>
+                                <span class="type-name" data-i18n="config_type_sms">SMS</span>
+                            </button>
+                            <button data-type="whatsapp" class="type-card" title="WhatsApp">
+                                <span class="type-icon"><i data-lucide="message-circle"></i></span>
+                                <span class="type-name" data-i18n="config_type_whatsapp">WhatsApp</span>
+                            </button>
+                            <button data-type="wifi" class="type-card" title="Red Wi-Fi">
+                                <span class="type-icon"><i data-lucide="wifi"></i></span>
+                                <span class="type-name" data-i18n="config_type_wifi">Wi-Fi</span>
+                            </button>
+                            <button data-type="vcard" class="type-card" title="Tarjeta de contacto">
+                                <span class="type-icon"><i data-lucide="user"></i></span>
+                                <span class="type-name" data-i18n="config_type_vcard">vCard</span>
+                            </button>
+                            <button data-type="event" class="type-card" title="Evento de calendario">
+                                <span class="type-icon"><i data-lucide="calendar"></i></span>
+                                <span class="type-name" data-i18n="config_type_event">Evento</span>
+                            </button>
+                            <button data-type="instagram" class="type-card" title="Perfil de Instagram">
+                                <span class="type-icon"><i data-lucide="instagram"></i></span>
+                                <span class="type-name" data-i18n="config_type_instagram">Instagram</span>
+                            </button>
+                            <button data-type="linkedin" class="type-card" title="Perfil de LinkedIn">
+                                <span class="type-icon"><i data-lucide="linkedin"></i></span>
+                                <span class="type-name" data-i18n="config_type_linkedin">LinkedIn</span>
+                            </button>
+                            <button data-type="twitter" class="type-card" title="Perfil de X (Twitter)">
+                                <span class="type-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="currentColor">
+                                        <path
+                                            d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932L18.901 1.153zM17.61 20.644h2.039L6.486 3.24H4.298L17.61 20.644z" />
+                                    </svg>
+                                </span>
+                                <span class="type-name" data-i18n="config_type_twitter">X / Twitter</span>
+                            </button>
+                            <button data-type="bitcoin" class="type-card" title="Dirección Bitcoin">
+                                <span class="type-icon"><i data-lucide="bitcoin"></i></span>
+                                <span class="type-name" data-i18n="config_type_bitcoin">Bitcoin</span>
+                            </button>
+                            <button data-type="location" class="type-card" title="Ubicación GPS">
+                                <span class="type-icon"><i data-lucide="map-pin"></i></span>
+                                <span class="type-name" data-i18n="config_type_location">Ubicación</span>
+                            </button>
+                            <button data-type="paypal" class="type-card" title="PayPal">
+                                <span class="type-icon"><i data-lucide="credit-card"></i></span>
+                                <span class="type-name" data-i18n="config_type_paypal">PayPal</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <label class="section-label" data-i18n="config_content">Contenido</label>
+                        <div id="form-container" class="form-container"></div>
+                    </div>
+
+                    <div class="section">
+                        <label class="section-label" data-i18n="config_customization">Personalización</label>
+
+                        <div class="customize-grid">
+                            <div class="customize-item">
+                                <label class="customize-label" data-i18n="config_primary_color">Color Principal</label>
+                                <input type="color" id="color-dark" class="color-input" value="#000000">
+                            </div>
+                            <div class="customize-item">
+                                <label class="customize-label" data-i18n="config_background_color">Color Fondo</label>
+                                <input type="color" id="color-light" class="color-input" value="#ffffff">
+                            </div>
+
+                            <div class="customize-item full-width">
+                                <label class="customize-label" data-i18n="config_point_style">Estilo de Puntos</label>
+                                <div class="style-selector">
+                                    <button data-style="square" class="style-btn active">
+                                        <span class="style-preview">■</span>
+                                        <span data-i18n="config_square">Cuadrado</span>
+                                    </button>
+                                    <button data-style="rounded" class="style-btn">
+                                        <span class="style-preview">▢</span>
+                                        <span data-i18n="config_rounded">Redondeado</span>
+                                    </button>
+                                    <button data-style="dots" class="style-btn">
+                                        <span class="style-preview">●</span>
+                                        <span data-i18n="config_dots">Puntos</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="customize-item full-width">
+                                <label class="customize-label" data-i18n="config_logo">Logo Central (opcional)</label>
+                                <div class="file-upload">
+                                    <input type="file" id="logo-upload" accept="image/*" class="file-input">
+                                    <label for="logo-upload" class="file-label">
+                                        <span class="file-icon"><i data-lucide="upload-cloud"></i></span>
+                                        <span data-i18n="config_upload_image" id="file-name">Subir imagen</span>
+                                    </label>
+                                    <button id="clear-logo" class="clear-logo hidden">✕</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button id="generate-btn" class="generate-btn">
+                        <span class="btn-icon"><i data-lucide="sparkles"></i></span>
+                        <span class="btn-text" data-i18n="config_generate_qr">Generar Código QR 100% GRATIS</span>
+                    </button>
+                </div>
+
+                <div class="preview-panel glass-card">
+                    <div class="panel-header">
+                        <h3 data-i18n="config_preview">Vista Previa</h3>
+                        <div class="preview-controls">
+                            <button id="zoom-out" class="control-btn"><i data-lucide="zoom-out"></i></button>
+                            <span class="zoom-level">100%</span>
+                            <button id="zoom-in" class="control-btn"><i data-lucide="zoom-in"></i></button>
+                        </div>
+                    </div>
+
+                    <div id="qr-display" class="qr-display">
+                        <div class="qr-placeholder">
+                            <div class="placeholder-animation">
+                                <div class="scan-line"></div>
+                                <i data-lucide="scan-qr-code" class="placeholder-qr-icon"></i>
+                            </div>
+                            <p data-i18n="config_placeholder_text" class="placeholder-text">Generá tu QR personalizado
+                                en segundos</p>
+                        </div>
+                    </div>
+
+                    <div id="download-section" class="download-section hidden">
+                        <div class="download-info">
+                            <span class="info-icon"><i data-lucide="check-circle-2"></i></span>
+                            <span data-i18n="config_download_success" class="info-text">QR Code generado
+                                exitosamente</span>
+                        </div>
+
+                        <div class="download-buttons">
+                            <button id="download-png" class="download-btn">
+                                <span class="download-icon" data-i18n="config_png">PNG</span>
+                                <span class="download-label" data-i18n="config_download_png">Descargar PNG</span>
+                            </button>
+                            <button id="download-svg" class="download-btn">
+                                <span class="download-icon" data-i18n="config_svg">SVG</span>
+                                <span class="download-label" data-i18n="config_download_svg">Descargar SVG</span>
+                            </button>
+                            <button id="download-pdf" class="download-btn">
+                                <span class="download-icon" data-i18n="config_pdf">PDF</span>
+                                <span class="download-label" data-i18n="config_download_pdf">Descargar PDF</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-intro">
+                <h2 class="section-title" data-i18n="config_features">Características Profesionales</h2>
+                <p class="section-desc" data-i18n="config_section_desc">Todo lo que necesitas para crear códigos QR
+                    perfectos</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card glass-card">
+                    <div class="feature-icon"><i data-lucide="palette"></i></div>
+                    <h3 class="feature-title" data-i18n="config_personalization">Personalización Total</h3>
+                    <p class="feature-desc" data-i18n="config_personalization_desc">Colores, estilos, logos y marcos
+                        para que tu QR sea único.</p>
+                </div>
+                <div class="feature-card glass-card">
+                    <div class="feature-icon"><i data-lucide="package"></i></div>
+                    <h3 class="feature-title" data-i18n="config_multiple_formats">Múltiples Formatos</h3>
+                    <p class="feature-desc" data-i18n="config_multiple_formats_desc">Descarga en PNG, SVG o PDF según
+                        tus necesidades.</p>
+                </div>
+                <div class="feature-card glass-card">
+                    <div class="feature-icon"><i data-lucide="zap"></i></div>
+                    <h3 class="feature-title" data-i18n="config_instant_generation">Generación Instantánea</h3>
+                    <p class="feature-desc" data-i18n="config_instant_generation_desc">Vista previa en tiempo real
+                        mientras personalizas.</p>
+                </div>
+                <div class="feature-card glass-card">
+                    <div class="feature-icon"><i data-lucide="lock"></i></div>
+                    <h3 class="feature-title" data-i18n="config_privacy">100% Privado</h3>
+                    <p class="feature-desc" data-i18n="config_privacy_desc">Todo se procesa en tu navegador. Sin
+                        servidores.</p>
+                </div>
+                <div class="feature-card glass-card">
+                    <div class="feature-icon"><i data-lucide="layout-grid"></i></div>
+                    <h3 class="feature-title" data-i18n="config_varieties">15 Tipos Diferentes</h3>
+                    <p class="feature-desc" data-i18n="config_varieties_desc">URL, redes sociales, contactos, Wi-Fi,
+                        ubicación y más.</p>
+                </div>
+                <div class="feature-card glass-card">
+                    <div class="feature-icon"><i data-lucide="award"></i></div>
+                    <h3 class="feature-title" data-i18n="config_free">Totalmente Gratis</h3>
+                    <p class="feature-desc" data-i18n="config_free_desc">Sin límites, sin marcas de agua, sin registro.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="how" class="how-it-works">
+        <div class="container">
+            <div class="section-intro">
+                <h2 class="section-title" data-i18n="how_title">Cómo Funciona</h2>
+                <p class="section-desc" data-i18n="how_desc">Crea tu código QR en 3 simples pasos</p>
+            </div>
+
+            <div class="steps-container">
+                <div class="step-card glass-card">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3 class="step-title" data-i18n="how_step1_title">Selecciona el tipo</h3>
+                        <p class="step-desc" data-i18n="how_step1_desc">Elige entre 15 tipos: URL, redes sociales,
+                            contacto, ubicación y más.</p>
+                    </div>
+                </div>
+                <div class="step-divider"><i data-lucide="arrow-right"></i></div>
+                <div class="step-card glass-card">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3 class="step-title" data-i18n="how_step2_title">Personaliza el diseño</h3>
+                        <p class="step-desc" data-i18n="how_step2_desc">Ajusta colores, agrega tu logo, elige el estilo
+                            de puntos y marco.</p>
+                    </div>
+                </div>
+                <div class="step-divider"><i data-lucide="arrow-right"></i></div>
+                <div class="step-card glass-card">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3 class="step-title" data-i18n="how_step3_title">Descarga y usa</h3>
+                        <p class="step-desc" data-i18n="how_step3_desc">Obtén tu QR en PNG, SVG o PDF listo para
+                            imprimir o compartir.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="faq">
+        <div class="container">
+            <div class="section-intro">
+                <h2 class="section-title" data-i18n="faq_title">Preguntas Frecuentes</h2>
+            </div>
+
+            <div class="faq-grid">
+                <details class="faq-item glass-card">
+                    <summary class="faq-question">
+                        <span data-i18n="faq_q1">¿Qué es un código QR?</span><i data-lucide="chevron-down"
+                            class="faq-chevron"></i>
+                    </summary>
+                    <p data-i18n="faq_a1" class="faq-answer">
+                        >Un código QR (Quick Response) es un código de barras bidimensional que puede
+                        almacenar
+                        información como URLs, contactos, texto, ubicaciones y más. Se escanea fácilmente con la cámara
+                        de cualquier smartphone.
+                    </p>
+                </details>
+
+                <details class="faq-item glass-card">
+                    <summary class="faq-question">
+                        <span data-i18n="faq_q2">¿Por qué agregar un logo al QR?</span>
+                        <i data-lucide="chevron-down" class="faq-chevron"></i>
+                    </summary>
+                    <p data-i18n="faq_a2" class="faq-answer">
+                        Agregar un logo hace que tu QR sea más reconocible y profesional. Los códigos
+                        QR tienen
+                        redundancia incorporada, por lo que pueden seguir funcionando incluso con un logo en el centro.
+                    </p>
+                </details>
+
+                <details class="faq-item glass-card">
+                    <summary class="faq-question">
+                        <span data-i18n="faq_q3">¿Cuál formato debo descargar?</span>
+                        <i data-lucide="chevron-down" class="faq-chevron"></i>
+                    </summary>
+                    <p data-i18n="faq_a3" class="faq-answer">
+                        PNG es ideal para redes sociales y uso digital. SVG es perfecto para
+                        impresión de alta calidad y
+                        escalado sin pérdida. PDF es útil para documentos y presentaciones profesionales.
+                    </p>
+                </details>
+
+                <details class="faq-item glass-card">
+                    <summary class="faq-question">
+                        <span data-i18n="faq_q4">¿Es realmente gratis?</span>
+                        <i data-lucide="chevron-down" class="faq-chevron"></i>
+                    </summary>
+                    <p data-i18n="faq_a4" class="faq-answer">
+                        Sí, 100% gratis. No hay límites de generación, no agregamos marcas de agua, y
+                        no requiere
+                        registro. Todo el procesamiento ocurre en tu navegador por privacidad.
+                    </p>
+                </details>
+
+                <details class="faq-item glass-card">
+                    <summary class="faq-question">
+                        <span  data-i18n="faq_q5">¿Los QR codes expiran?</span>
+                        <i data-lucide="chevron-down" class="faq-chevron"></i>
+                    </summary>
+                    <p data-i18n="faq_a5" class="faq-answer">
+                        Los códigos QR estáticos (como los que generamos) nunca expiran. Funcionarán mientras la
+                        información que contienen sea válida (ej: el enlace siga activo).
+                    </p>
+                </details>
+
+                <details class="faq-item glass-card">
+                    <summary class="faq-question">
+                        <span  data-i18n="faq_q6">¿Puedo usar los QR comercialmente?</span>
+                        <i data-lucide="chevron-down" class="faq-chevron"></i>
+                    </summary>
+                    <p data-i18n="faq_a6" class="faq-answer">
+                        Por supuesto. Los códigos QR que generas son de tu propiedad y puedes usarlos libremente para
+                        cualquier propósito personal o comercial sin restricciones.
+                    </p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-icon"><i data-lucide="qr-code"></i></span>
+                        <span class="logo-text" data-i18n="footer_brand">QR Genesis</span>
+                    </div>
+                    <p class="footer-tagline" data-i18n="footer_tagline">Generá tu QR personalizado en segundos</p>
+                </div>
+
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4 class="footer-title" data-i18n="config_product">Producto</h4>
+                        <a href="#features" class="footer-link" data-i18n="config_features">Características</a>
+                        <a href="#how" class="footer-link" data-i18n="config_how">Cómo funciona</a>
+                        <a href="#faq" class="footer-link" data-i18n="config_faq">Preguntas</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4 class="footer-title" data-i18n="footer_legal">Legal</h4>
+                        <a href="privacy.html" class="footer-link" data-i18n="footer_privacy">Privacidad</a>
+                        <a href="terms.html" class="footer-link" data-i18n="footer_terms">Términos</a>
+                        <a href="cookies.html" class="footer-link" data-i18n="footer_cookies">Cookies</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4 class="footer-title" data-i18n="footer_support">Soporte</h4>
+                        <a href="mailto:bautiea24@gmail.com" class="footer-link" data-i18n="footer_contact">
+                            Contacto</a>
+                        <a href="mailto:bautiea24@gmail.com" class="footer-link" data-i18n="footer_help">
+                            Ayuda</a>
+                        <a href="mailto:bautiea24@gmail.com" class="footer-link" data-i18n="footer_feedback">
+                            Feedback</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="copyright" data-i18n="footer_copyright">© 2026 QR Genesis. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
